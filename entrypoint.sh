@@ -35,7 +35,7 @@ chmod +x /v2raybin/*
 mkdir /caddybin
 ls
 cd /caddybin
-wget --no-check-certificate -qO 'caddy.tar.gz' "https://github.com/zxclown/v2ray-heroku-undone/raw/master/caddy_2.0.0_linux_amd64.tar.gz"
+wget --no-check-certificate -qO 'caddy.tar.gz' "https://github.com/zxclown/v2ray-heroku-undone/raw/master/caddy_v1.0.3_linux_amd64.tar.gz"
 ls
 tar xvf caddy.tar.gz
 ls
