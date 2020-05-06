@@ -23,26 +23,19 @@ SYS_Bit="$(getconf LONG_BIT)"
 [[ "$SYS_Bit" == '32' ]] && BitVer='_linux_386.tar.gz'
 [[ "$SYS_Bit" == '64' ]] && BitVer='_linux_amd64.tar.gz'
 
-if [ "$VER" = "latest" ]; then
-  V_VER=`wget -qO- "https://api.github.com/repos/v2ray/v2ray-core/releases/latest" | grep 'tag_name' | cut -d\" -f4`
-else
-  V_VER="v$VER"
-fi
-
 mkdir /v2raybin
 cd /v2raybin
-wget --no-check-certificate -qO 'v2ray.zip' "https://github.com/v2ray/v2ray-core/releases/download/$V_VER/v2ray-linux-$SYS_Bit.zip"
+wget --no-check-certificate -qO 'v2ray.zip' "https://github.com/zxclown/v2ray-heroku-undone/raw/master/v2ray-linux-64.zip"
+ls
 unzip v2ray.zip
 rm -rf v2ray.zip
-#chmod +x /v2raybin/v2ray-$V_VER-linux-$SYS_Bit/*
 ls
 chmod +x /v2raybin/*
 
-C_VER=`wget -qO- "https://api.github.com/repos/caddyserver/caddy/releases/latest" | grep 'tag_name' | cut -d\" -f4`
 mkdir /caddybin
 ls
 cd /caddybin
-wget --no-check-certificate -qO 'caddy.tar.gz' "https://github.com/caddyserver/caddy/releases/download/$C_VER/caddy_$C_VER$BitVer"
+wget --no-check-certificate -qO 'caddy.tar.gz' "https://github.com/zxclown/v2ray-heroku-undone/raw/master/caddy_2.0.0_linux_amd64.tar.gz"
 ls
 tar xvf caddy.tar.gz
 ls
